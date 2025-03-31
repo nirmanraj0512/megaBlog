@@ -1,0 +1,87 @@
+/* General Styles */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+/* Login Card */
+.login-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+/* Logo */
+.login-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+/* Title */
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+}
+
+/* Input Fields */
+.login-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: 0.3s;
+    background: #f9f9f9;
+}
+
+.login-input:focus {
+    border-color: #00c6ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.6);
+}
+
+/* Button */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background: linear-gradient(90deg, #0055cc, #00a3ff);
+}
+
+/* Error Message */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem;
+    }
+    .login-title {
+        font-size: 1.6rem;
+    }
+}
