@@ -35,7 +35,8 @@ export class AuthService{
             const userAccount=await this.account.create(ID.unique(),email,password);
             //Yaha par name hum add nhi kiye sab ke saath usko alg se dale hai kyuki create() metthod me support nhi karta hai .CHATGPT
             if(userAccount){
-                await this.account.updatePrefs({ name });
+                await this.account.updatePrefs({ 'Name':'name'  });
+                console.log("auth",userAccount)
                 //call another Method----> agar phele se exsit karta hai to login bhi kardo ye soche hai baad me likhege
                 return this.login({email,password});
             }

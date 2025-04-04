@@ -33,6 +33,8 @@ export default function PostForm({ post }) {
             });
 
             if (dbPost) {
+                //  Added success alert 
+                alert("Post edited successfully!"); 
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
@@ -44,7 +46,9 @@ export default function PostForm({ post }) {
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
-                    navigate(`/post/${dbPost.$id}`);
+                    // Added success alert and redirection after adding
+                    alert("Post uploaded successfully!"); 
+                    navigate("/"); // Redirect to home
                 }
             }
         }

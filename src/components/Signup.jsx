@@ -12,17 +12,23 @@ function Signup() {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
+
+  //Dikkat isme hai 
   const create = async (data) => {
     setError("");
     try {
-      const userData = await authService.createAccount(data);
-      if (userData) {
+      const user = await authService.createAccount(data);
+      console.log(user);
+      if (user) {
+        await authService.login(data.email, data.password); 
         const userData = await authService.getCurrentUser();
+        // userdata me dekhte hai 
         if (userData) dispatch(login(userData));
+        alert("Account created successfully! Redirecting to home...");
         navigate("/");
       }
     } catch (error) {
-      setError(error.message);
+      // setError(error.message);
     }
   };
 
@@ -76,7 +82,7 @@ function Signup() {
               {...register("email", {
                 required: true,
                 validate: {
-                  matchPatern: (value) =>
+                  matchPattern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid address",
                 },

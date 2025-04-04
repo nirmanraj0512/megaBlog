@@ -63,7 +63,7 @@ function Login() {
 
                     {/* Password Input */}
                     <Input
-                        label="Password"
+                        
                         type="password"
                         placeholder="Enter your Password"
                         {...register('password', { required: 'Password is required' })}
